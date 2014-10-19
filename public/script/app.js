@@ -70,6 +70,9 @@ hello.init({
             if(!base.isOnline(base.getAuthResponse())){
                 hello( base.network ).login().then(base.loginSuccess,base.loginError)
             }
+             else{
+                 base.fetchProfile();
+             }
             
          };
         
