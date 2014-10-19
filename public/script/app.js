@@ -92,9 +92,8 @@ hello.init({
          };
         
         // Sample Function, Uncomment to use
-         base.onFetchProfileSuccess = function(reponse){
-               console.log(response)
-                $("#"+base).html();
+         base.onFetchProfileSuccess = function(response){
+                $("#"+base).html(JSON.stringify(response));
          };
         
         // Sample Function, Uncomment to use
