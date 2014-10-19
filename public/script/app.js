@@ -76,6 +76,7 @@ hello.init({
         // Sample Function, Uncomment to use
          base.loginSuccess = function(){
                alert("You are signed in to "+base.network);
+                base.fetchProfile();
          };
         
         // Sample Function, Uncomment to use
