@@ -93,7 +93,7 @@ hello.init({
         
         // Sample Function, Uncomment to use
          base.onFetchProfileSuccess = function(response){
-                $("#"+base).html(JSON.stringify(response));
+                $("#"+ base.network).html(JSON.stringify(response));
          };
         
         // Sample Function, Uncomment to use
