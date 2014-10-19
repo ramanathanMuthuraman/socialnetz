@@ -88,7 +88,18 @@ hello.init({
          };
         // Sample Function, Uncomment to use
          base.fetchProfile = function(){
-              hello( base.network ).api("me").then(base.onSuccess,base.onError)
+              hello( base.network ).api("me").then(base.onFetchProfileSuccess,base.onFetchProfileError)
+         };
+        
+        // Sample Function, Uncomment to use
+         base.onFetchProfileSuccess = function(reponse){
+               console.log(response)
+                $("#"+base).html();
+         };
+        
+        // Sample Function, Uncomment to use
+         base.onFetchProfileError = function(e){
+                alert("Fetch profile error from " + base.network +":"+ e.error.message );
          };
         // Run initializer
         base.init();
