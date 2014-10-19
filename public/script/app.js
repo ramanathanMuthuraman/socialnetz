@@ -9,7 +9,7 @@
 var NETWORK = {
     "GITHUB_CLIENT_ID": "e693240493ab3060c7cf",
     "LINKEDIN_CLIENT_ID" : "757qomcur069qo",
-    "TWITTER_CLIENT_ID" : "SDFA7KP2DOPVNLrSdccgsW2Z8",
+    "TWITTER_CLIENT_ID" : "JapZ2slFtcAAwbk1Ef1Pyazgt",
     "FACEBOOK_CLIENT_ID" : "377105592436893",
 }
 hello.init({
