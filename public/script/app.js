@@ -87,22 +87,10 @@ var context = {
             $(".network-content").addClass("hide");
             $("#"+base.network).removeClass("hide");
             $("a[href*='"+base.network+"']").closest("li").addClass("active");
-            //base.login();
-            base[base.network+"Me"]();
-         };
-         base.githubMe = function(){
+            base.login();
             
-            //get github profile
-          hello(  base.network ).api("me").then(function(p){
-            var source   = $("#github-profile-template").html();
-            var template = Handlebars.compile(source);
-            var html    = $("#"+base.network).find(".profile-content").html(template(p));
-           
-        }, function( e ){
-                alert("Signin error: " + e.error.message );
-           });
-         //get github profile
          };
+       
          // Sample Function, Uncomment to use
          base.isOnline = function(session){
             var current_time = (new Date()).getTime() / 1000;
@@ -135,7 +123,7 @@ var context = {
                 hello( base.network ).login().then(base.loginSuccess,base.loginError)
             }
              else{
-                 base.fetchProfile();
+                 base.profile();
              }
             
          };
@@ -143,7 +131,7 @@ var context = {
         // Sample Function, Uncomment to use
          base.loginSuccess = function(){
                alert("You are signed in to "+base.network);
-                base.fetchProfile();
+                base.profile();
          };
         
         // Sample Function, Uncomment to use
@@ -151,17 +139,19 @@ var context = {
                 alert("Signin error from " + base.network +":"+ e.error.message );
          };
         // Sample Function, Uncomment to use
-         base.fetchProfile = function(){
-              hello( base.network ).api("me").then(base.onFetchProfileSuccess,base.onFetchProfileError)
+         base.profile = function(){
+              hello( base.network ).api("me").then(base.onProfileSuccess,base.onProfileError)
          };
         
         // Sample Function, Uncomment to use
-         base.onFetchProfileSuccess = function(response){
-                $("#"+ base.network).html(JSON.stringify(response));
+         base.onProfileSuccess = function(response){
+            var source   = $("#profile-template").html();
+            var template = Handlebars.compile(source);
+            var html    = $("#"+base.network).find(".profile-content").html(template(p));
          };
         
         // Sample Function, Uncomment to use
-         base.onFetchProfileError = function(e){
+         base.onProfileError = function(e){
                 alert("Fetch profile error from " + base.network +":"+ e.error.message );
          };
         // Run initializer
