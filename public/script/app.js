@@ -147,7 +147,7 @@ var context = {
          base.onProfileSuccess = function(response){
             var source   = $("#profile-template").html();
             var template = Handlebars.compile(source);
-            var html    = $("#"+base.network).find(".profile-content").html(template(p));
+            var html    = $("#"+base.network).find(".profile-content").html(template(response));
          };
         
         // Sample Function, Uncomment to use
