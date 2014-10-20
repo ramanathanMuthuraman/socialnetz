@@ -99,6 +99,18 @@
                         <h1 class="page-header">
                             Github <small>Statistics Overview</small>
                         </h1>
+                         <div class="row">
+                        <div class="col-lg-12">
+                        <div class="profile" class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
+                            </div>
+                            <div  class="panel-body profile-content"></div>
+                           <!-- github-profile-template here -->
+                          
+                            </div>
+                            </div>
+                            </div>
                  
               </div>
               </div>
@@ -146,11 +158,18 @@
               </div>
       </div>
       
-      
+      <!-- templates -->
+
+       <script id="github-profile-template" type="text/x-handlebars-template">
+                            <a href="#">{{login}}</a>
+                            <img src="{{avatar_url}}">
+       </script>
       
   </body>
   <!-- /main -->
   <script  src="public/components/jquery/dist/jquery.min.js">
+  </script>
+   <script  src="public/components/handlebars/handlebars.min.js">
   </script>
   <script src="public/components/bootstrap/dist/js/bootstrap.min.js">
   </script>

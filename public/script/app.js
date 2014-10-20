@@ -20,6 +20,41 @@ hello.init({
     
 });
 
+var context = {
+        "git": {
+            "login": "ramanathanMuthuraman",
+            "id": 5201881,
+            "avatar_url": "https://avatars.githubusercontent.com/u/5201881?v=2",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/ramanathanMuthuraman",
+            "html_url": "https://github.com/ramanathanMuthuraman",
+            "followers_url": "https://api.github.com/users/ramanathanMuthuraman/followers",
+            "following_url": "https://api.github.com/users/ramanathanMuthuraman/following{/other_user}",
+            "gists_url": "https://api.github.com/users/ramanathanMuthuraman/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/ramanathanMuthuraman/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/ramanathanMuthuraman/subscriptions",
+            "organizations_url": "https://api.github.com/users/ramanathanMuthuraman/orgs",
+            "repos_url": "https://api.github.com/users/ramanathanMuthuraman/repos",
+            "events_url": "https://api.github.com/users/ramanathanMuthuraman/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/ramanathanMuthuraman/received_events",
+            "type": "User",
+            "site_admin": false,
+            "name": "",
+            "company": "",
+            "blog": "",
+            "location": "",
+            "email": "",
+            "hireable": false,
+            "bio": null,
+            "public_repos": 12,
+            "public_gists": 2,
+            "followers": 1,
+            "following": 3,
+            "created_at": "2013-08-10T07:16:56Z",
+            "updated_at": "2014-10-19T13:53:37Z"
+        }
+    };
+
 
 (function($){
     $.socialnetz = function(options){
@@ -53,8 +88,21 @@ hello.init({
             $("#"+base.network).removeClass("hide");
             $("a[href*='"+base.network+"']").closest("li").addClass("active");
             //base.login();
+            base[base.network+"Me"]();
          };
-        
+         base.githubMe = function(){
+            
+            //get github profile
+          hello(  base.network ).api("me").then(function(p){
+            var source   = $("#github-profile-template").html();
+            var template = Handlebars.compile(source);
+            var html    = $("#"+base.network).find(".profile-content").html(template(p));
+           
+        }, function( e ){
+                alert("Signin error: " + e.error.message );
+           });
+         //get github profile
+         };
          // Sample Function, Uncomment to use
          base.isOnline = function(session){
             var current_time = (new Date()).getTime() / 1000;
@@ -152,13 +200,7 @@ $(document).ready(function(){
     };
     var fetchDataFromGithub = function()
     {
-         //get github profile
-          hello( "github" ).api("me").then(function(p){
-			$("#network").html("<img src='"+ p.thumbnail + "' width=24/>Connected as "+ p.name);
-		}, function( e ){
-                 alert("Signin error: " + e.error.message );
-            });
-         //get github profile
+         
     };
     
  
