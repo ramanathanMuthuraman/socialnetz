@@ -137,7 +137,7 @@ var context = {
         // Sample Function, Uncomment to use
          base.login = function(){
             if(!base.isOnline(base.getAuthResponse())){
-                hello( base.network ).login().then(base.loginSuccess,base.loginError)
+                hello( base.network ).login({"force":false}).then(base.loginSuccess,base.loginError)
             }
              else{
                  base.profile();
