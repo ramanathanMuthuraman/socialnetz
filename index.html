@@ -103,9 +103,12 @@
                         <div class="col-lg-12">
                         <div class="profile" class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Profile</h3>
                             </div>
-                            <div  class="panel-body profile-content"></div>
+                            <div  class="panel-body"></div>
+                            <div class="row profile-content">
+
+                            </div>
                            <!-- github-profile-template here -->
                           
                             </div>
@@ -161,8 +164,9 @@
       <!-- templates -->
 
        <script id="profile-template" type="text/x-handlebars-template">
-                            <a href="#">{{login}}</a>
-                            <img src="{{avatar_url}}">
+
+                            <a class="col-md-4 col-sm-6" href="#">{{login}}</a>
+                            <img class="img-circle col-md-4 col-sm-6" src="{{avatar_url}}">
        </script>
       
   </body>
