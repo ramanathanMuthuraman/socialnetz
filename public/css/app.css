@@ -224,10 +224,16 @@ ul.alert-dropdown {
     display: none;
 }
 
-.center-content:before{
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -0.25em;
+.flex-container {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-item-center{
+    -webkit-align-self : center;
+    -moz-align-self : center;
+    -ms-align-self : center;
+    align-self : center;
 }
