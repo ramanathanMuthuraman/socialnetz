@@ -66,10 +66,23 @@ var context = {
             base.options = $.extend({},$.socialnetz.defaultOptions, options);
             base.initialView();
             $(window).on('hashchange', base.load);
-            $(".login").on("click",base.login);
-            $(".logout").on("click",base.logout);
+            $(".status").on("click",base.status);
            
             // Put your initialization code here
+        };
+        base.status = function (e){
+            var $el = $(e.currentTarget);
+            if($el.hasClass("login"))
+            {
+                //proceed to login
+                 base.login();
+            }
+            else
+            {
+                //proceed to logout
+                 base.logout();
+            }
+
         };
         base.initialView = function()
         {
@@ -112,7 +125,7 @@ var context = {
         
         // Sample Function, Uncomment to use
          base.logoutSuccess = function(){
-                 $("#"+base.network).find(".logout").html("Login").toggleClass("login logout");
+                 $("#"+base.network).find(".status").html("Login").toggleClass("login logout");
                alert("Signed out from" + base.network);
          };
         
@@ -150,7 +163,7 @@ var context = {
         
         // Sample Function, Uncomment to use
          base.onProfileSuccess = function(response){
-            $("#"+base.network).find(".login").html("Logout").toggleClass("login logout");
+            $("#"+base.network).find(".status").html("Logout").toggleClass("login logout");
             var source   = $("#profile-template").html();
             var template = Handlebars.compile(source);
             var html    = $("#"+base.network).find(".profile-content").html(template(response));
