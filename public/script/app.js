@@ -66,6 +66,8 @@ var context = {
             base.options = $.extend({},$.socialnetz.defaultOptions, options);
             base.initialView();
             $(window).on('hashchange', base.load);
+            $(".login").on("click",base.login);
+            $(".logout").on("click",base.logout);
            
             // Put your initialization code here
         };
@@ -73,6 +75,7 @@ var context = {
         {
              if(location.hash){
                 base.load();
+                base.login();
             }
             else{
                 location.hash = $(".network-list").eq(0).find("a").attr("href");
@@ -87,7 +90,7 @@ var context = {
             $(".network-content").addClass("hide");
             $("#"+base.network).removeClass("hide");
             $("a[href*='"+base.network+"']").closest("li").addClass("active");
-            base.login();
+            
             
          };
        
@@ -109,6 +112,7 @@ var context = {
         
         // Sample Function, Uncomment to use
          base.logoutSuccess = function(){
+                 $("#"+base.network).find(".logout").html("Login").toggleClass("login logout");
                alert("Signed out from" + base.network);
          };
         
@@ -131,6 +135,7 @@ var context = {
         // Sample Function, Uncomment to use
          base.loginSuccess = function(){
                alert("You are signed in to "+base.network);
+
                 base.profile();
          };
         
@@ -145,6 +150,7 @@ var context = {
         
         // Sample Function, Uncomment to use
          base.onProfileSuccess = function(response){
+            $("#"+base.network).find(".login").html("Logout").toggleClass("login logout");
             var source   = $("#profile-template").html();
             var template = Handlebars.compile(source);
             var html    = $("#"+base.network).find(".profile-content").html(template(response));
