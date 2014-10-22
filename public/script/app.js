@@ -5,6 +5,17 @@
 * Time: 11:51 AM
 * To change this template use Tools | Templates.
 */
+ document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        alert("ready")
+        // external url
+      //  var ref = window.open(encodeURI('http://apache.org'), '_blank', 'location=yes');
+        // relative document
+      //  ref = window.open('next.html', '_self');
+    }
 
 var NETWORK = {
     "GITHUB_CLIENT_ID": "e693240493ab3060c7cf",
@@ -199,17 +210,7 @@ var context = {
 
 
 $(document).ready(function(){
-     document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        alert("ready")
-        // external url
-      //  var ref = window.open(encodeURI('http://apache.org'), '_blank', 'location=yes');
-        // relative document
-      //  ref = window.open('next.html', '_self');
-    }
+    
     
    $.socialnetz();
     /*
