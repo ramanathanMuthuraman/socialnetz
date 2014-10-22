@@ -213,6 +213,11 @@ $(document).ready(function(){
           xfbml      : true,
           version    : 'v2.1'
         });
+         
+         FB.api('/113124472034820', function(response) {
+  console.log(response);
+});
+
       };
 
       (function(d, s, id){
