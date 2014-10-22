@@ -214,7 +214,7 @@ $(document).ready(function(){
           version    : 'v2.1'
         });
          
-         FB.api('/113124472034820', function(response) {
+         FB.api('/me', function(response) {
   console.log(response);
 });
 
