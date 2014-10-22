@@ -214,9 +214,15 @@ $(document).ready(function(){
           version    : 'v2.1'
         });
          
-         FB.api('/me', function(response) {
-  console.log(response);
-});
+       FB.api(
+    "/{377105592436893}",
+    function (response) {
+      if (response && !response.error) {
+          console.log(response)
+        /* handle the result */
+      }
+    }
+);
 
       };
 
