@@ -5,7 +5,7 @@
 * Time: 11:51 AM
 * To change this template use Tools | Templates.
 */
- window.open('http://ramanathanmuthuraman.github.io/socialnetz', '_blank', 'location=yes');
+
 var NETWORK = {
     "GITHUB_CLIENT_ID": "e693240493ab3060c7cf",
     "LINKEDIN_CLIENT_ID" : "757qomcur069qo",
