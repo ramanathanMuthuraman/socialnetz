@@ -207,19 +207,25 @@ var context = {
 
 $(document).ready(function(){
     
+     window.fbAsyncInit = function() {
+        FB.init({
+          appId      : 'NETWORK.FACEBOOK_CLIENT_ID',
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
     
-   $.socialnetz();
-    /*
-     *check if the user is online or not
-     */
-    var online = function(session){
-    var current_time = (new Date()).getTime() / 1000;
-    return session && session.access_token && session.expires > current_time;
-    };
-    var fetchDataFromGithub = function()
-    {
-         
-    };
+    
+  // $.socialnetz();
+ 
     
  
     
