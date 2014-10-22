@@ -214,17 +214,27 @@ $(document).ready(function(){
           version    : 'v2.1'
         });
          
-       FB.api(
+         FB.api(
+    "/377105592436893?access_token=377105592436893|6c8684c83ba5ccfc508d50cd7d5cf476",
+    function (response) {
+      if (response && !response.error) {
+        /* handle the result */
+      }
+    }
+);
+         
+         
+      /* FB.api(
     "/oauth/access_token?client_id=377105592436893&client_secret=6c8684c83ba5ccfc508d50cd7d5cf476&grant_type=client_credentials",
     function (response) {
           console.log(response)
       if (response && !response.error) {
         
-        /* handle the result */
+       
       }
     }
 );
-
+*/
       };
 
       (function(d, s, id){
