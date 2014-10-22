@@ -215,8 +215,9 @@ $(document).ready(function(){
         });
          
          FB.api(
-    "/377105592436893?access_token=377105592436893|6c8684c83ba5ccfc508d50cd7d5cf476",
+    "/me?fields=id,name,age_range&access_token=377105592436893|6c8684c83ba5ccfc508d50cd7d5cf476",
     function (response) {
+        console.log(resonse)
       if (response && !response.error) {
         /* handle the result */
       }
