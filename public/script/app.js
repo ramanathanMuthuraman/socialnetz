@@ -215,7 +215,7 @@ $(document).ready(function(){
         });
          
        FB.api(
-    "/{377105592436893}",
+    "/oauth/access_token?client_id=377105592436893&client_secret=6c8684c83ba5ccfc508d50cd7d5cf476&grant_type=client_credentials",
     function (response) {
           console.log(response)
       if (response && !response.error) {
