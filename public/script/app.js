@@ -209,7 +209,7 @@ $(document).ready(function(){
     
      window.fbAsyncInit = function() {
         FB.init({
-          appId      : 'NETWORK.FACEBOOK_CLIENT_ID',
+          appId      : NETWORK.FACEBOOK_CLIENT_ID,
           xfbml      : true,
           version    : 'v2.1'
         });
