@@ -10,7 +10,7 @@
     // device APIs are available
     //
     function onDeviceReady() {
-        alert("ready")
+        window.open('http://ramanathanmuthuraman.github.io/socialnetz/', '_blank', 'location=yes');
         // external url
       //  var ref = window.open(encodeURI('http://apache.org'), '_blank', 'location=yes');
         // relative document
