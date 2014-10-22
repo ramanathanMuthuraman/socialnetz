@@ -225,7 +225,7 @@ $(document).ready(function(){
 );
          
          
-      /* FB.api(
+       FB.api(
     "/oauth/access_token?client_id=377105592436893&client_secret=6c8684c83ba5ccfc508d50cd7d5cf476&grant_type=client_credentials",
     function (response) {
           console.log(response)
@@ -235,7 +235,7 @@ $(document).ready(function(){
       }
     }
 );
-*/
+
       };
 
       (function(d, s, id){
