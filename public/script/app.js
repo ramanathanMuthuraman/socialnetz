@@ -214,6 +214,18 @@ $(document).ready(function(){
           version    : 'v2.1'
         });
          
+         FB.login(function(response) {
+   if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+     });
+   } else {
+     console.log('User cancelled login or did not fully authorize.');
+   }
+ });
+         
+         
          FB.api(
     "/search?q=mark&type=user&access_token=377105592436893|g3Wf5u5jk18vIP1JncfHDsDIcV8",
     function (response) {
@@ -234,7 +246,7 @@ $(document).ready(function(){
        
       }
     }
-);
+);$
 
       };
 
