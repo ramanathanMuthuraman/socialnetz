@@ -215,10 +215,11 @@ $(document).ready(function(){
         });
          
        FB.api(
-    "/{377105592436893}",
+    "/377105592436893",
     function (response) {
-      if (response && !response.error) {
           console.log(response)
+      if (response && !response.error) {
+        
         /* handle the result */
       }
     }
