@@ -218,7 +218,7 @@ $(document).ready(function(){
    if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
-       console.log('Good to see you, ' + response.name + '.');
+       alert('Good to see you, ' + response.name + '.');
      });
    } else {
      console.log('User cancelled login or did not fully authorize.');
@@ -226,28 +226,7 @@ $(document).ready(function(){
  });
          
          
-         FB.api(
-    "/search?q=mark&type=user&access_token=377105592436893|g3Wf5u5jk18vIP1JncfHDsDIcV8",
-    function (response) {
-        console.log(response)
-      if (response && !response.error) {
-        /* handle the result */
-      }
-    }
-);
-         
-         
-       FB.api(
-    "/oauth/access_token?client_id=377105592436893&client_secret=6c8684c83ba5ccfc508d50cd7d5cf476&grant_type=client_credentials",
-    function (response) {
-          console.log(response)
-      if (response && !response.error) {
         
-       
-      }
-    }
-);$
-
       };
 
       (function(d, s, id){
