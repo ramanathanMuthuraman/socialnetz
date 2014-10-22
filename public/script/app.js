@@ -215,7 +215,7 @@ $(document).ready(function(){
         });
          
          FB.api(
-    "/me?fields=id,name,age_range&access_token=377105592436893|6c8684c83ba5ccfc508d50cd7d5cf476",
+    "/search?q=mark&type=user&access_token=377105592436893|6c8684c83ba5ccfc508d50cd7d5cf476",
     function (response) {
         console.log(response)
       if (response && !response.error) {
