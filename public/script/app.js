@@ -20,6 +20,7 @@ hello.init({
     
 });
 
+
 var context = {
         "git": {
             "login": "ramanathanMuthuraman",
@@ -198,6 +199,17 @@ var context = {
 
 
 $(document).ready(function(){
+     document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        alert("ready")
+        // external url
+      //  var ref = window.open(encodeURI('http://apache.org'), '_blank', 'location=yes');
+        // relative document
+      //  ref = window.open('next.html', '_self');
+    }
     
    $.socialnetz();
     /*
