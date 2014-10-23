@@ -10,8 +10,13 @@
     // device APIs are available
     //
     function onDeviceReady() {
-        alert("ready");
-
+        alert(typeof(facebookConnectPlugin));
+        facebookConnectPlugin.browserInit("377105592436893", "2.1");
+        facebookConnectPlugin.login(function(ressponse){
+            alert(response);
+        },function(response){
+            alert(response);
+        });
 
 
         /*FB.init({
