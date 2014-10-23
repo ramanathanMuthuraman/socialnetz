@@ -10,14 +10,14 @@
     // device APIs are available
     //
     function onDeviceReady() {
-        alert("FB")
+        alert("FB");
         /*FB.init({
           appId      : NETWORK.FACEBOOK_CLIENT_ID,
           xfbml      : true,
           version    : 'v2.1'
         });*/
          
-         FB.login(function(response) {
+        /* FB.login(function(response) {
    if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ');
      FB.api('/me', function(response) {
@@ -26,7 +26,7 @@
    } else {
      console.log('User cancelled login or did not fully authorize.');
    }
- });
+ });*/
       
     }
 
