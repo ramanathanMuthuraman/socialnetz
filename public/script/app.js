@@ -11,6 +11,14 @@
     //
     function onDeviceReady() {
         alert("FB");
+        facebookConnectPlugin.browserInit("377105592436893", "2.1");
+        facebookConnectPlugin.login(function(ressponse){
+            alert(response);
+        },function(response){
+            alert(response);
+        });
+
+
         /*FB.init({
           appId      : NETWORK.FACEBOOK_CLIENT_ID,
           xfbml      : true,

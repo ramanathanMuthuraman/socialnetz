@@ -52,10 +52,6 @@
         <gap:plugin name="Example" />
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
-<gap:plugin name="com.phonegap.plugins.facebookconnect">
-    <param name="APP_ID" value="377105592436893" />
-    <param name="APP_NAME" value="socialnetz" />
-</gap:plugin>
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
