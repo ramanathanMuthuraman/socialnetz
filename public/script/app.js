@@ -10,7 +10,24 @@
     // device APIs are available
     //
     function onDeviceReady() {
-      var ref = window.open('http://ramanathanmuthuraman.github.io/socialnetz/', '_blank', 'location=yes');
+        alert("FB")
+        /*FB.init({
+          appId      : NETWORK.FACEBOOK_CLIENT_ID,
+          xfbml      : true,
+          version    : 'v2.1'
+        });*/
+         
+         FB.login(function(response) {
+   if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       alert('Good to see you, ' + response.name + '.');
+     });
+   } else {
+     console.log('User cancelled login or did not fully authorize.');
+   }
+ });
+      
     }
 
 var NETWORK = {
@@ -207,7 +224,7 @@ var context = {
 
 $(document).ready(function(){
     
-     window.fbAsyncInit = function() {
+   /*  window.fbAsyncInit = function() {
         FB.init({
           appId      : NETWORK.FACEBOOK_CLIENT_ID,
           xfbml      : true,
@@ -235,7 +252,7 @@ $(document).ready(function(){
          js = d.createElement(s); js.id = id;
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+       }(document, 'script', 'facebook-jssdk'));*/
     
     
   // $.socialnetz();
