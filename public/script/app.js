@@ -5,7 +5,7 @@
 * Time: 11:51 AM
 * To change this template use Tools | Templates.
 */
- document.addEventListener("deviceready", onDeviceReady, false);
+ //document.addEventListener("deviceready", onDeviceReady, false);
 
     // device APIs are available
     //

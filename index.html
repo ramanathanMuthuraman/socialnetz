@@ -15,7 +15,7 @@
   </head>
   <body>
     
-    
+    <div id="fb-root"></div>
     <div id="wrapper">
       <!-- header -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -109,9 +109,27 @@
                                 <h3 class="panel-title">Profile</h3>
                             </div>
                             <div  class="panel-body">
-                            <div class="row profile-content flex-container">
+                          <!--  <div class="row profile-content flex-container">
 
-                            </div>
+                            </div>-->
+                                <button class="btn btn-block" onclick="login()">Login with Facebook</button>
+<hr/>
+
+<button class="btn btn-block" onclick="getInfo()">Get My Info</button>
+<p>Name: <span id="userName"></span></p>
+<img id="userPic"/>
+<hr/>
+
+<textarea id="Message" placeholder="What's on your mind?" rows="5"></textarea>
+<button class="btn btn-block" onclick="share()">Share</button>
+<hr/>
+
+<p>Complete Facebook Logout. After logging out, you'll have to login again and provide your Facebook credentials.</p>
+<button class="btn btn-block" onclick="logout()">Logout</button>
+<hr/>
+
+<p>Revoke App Permissions. After revoking permissions, you'll have to grant permissions again when logging in.</p>
+<button class="btn btn-block" onclick="revoke()">Revoke Permissions</button>
                              </div>
 
                            <!-- github-profile-template here -->
@@ -185,8 +203,71 @@
   <script  src="public/components/hello/dist/hello.all.js">
   </script>
 <script src="phonegap.js"></script>
-<script src="cdv-plugin-fb-connect.js"></script> 
-<script src="facebook-js-sdk.js"></script> 
+<script src="openfb.js"></script>
+<script>
+
+     // Defaults to sessionStorage for storing the Facebook token
+     openFB.init({appId: '377105592436893'});
+
+    //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
+    //  openFB.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
+
+    function login() {
+        openFB.login(
+                function(response) {
+                    if(response.status === 'connected') {
+                        alert('Facebook login succeeded, got access token: ' + response.authResponse.token);
+                    } else {
+                        alert('Facebook login failed: ' + response.error);
+                    }
+                }, {scope: 'email,read_stream,publish_stream'});
+    }
+
+    function getInfo() {
+        openFB.api({
+            path: '/me',
+            success: function(data) {
+                console.log(JSON.stringify(data));
+                document.getElementById("userName").innerHTML = data.name;
+                document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
+            },
+            error: errorHandler});
+    }
+
+    function share() {
+        openFB.api({
+            method: 'POST',
+            path: '/me/feed',
+            params: {
+                message: document.getElementById('Message').value || 'Testing Facebook APIs'
+            },
+            success: function() {
+                alert('the item was posted on Facebook');
+            },
+            error: errorHandler});
+    }
+
+    function revoke() {
+        openFB.revokePermissions(
+                function() {
+                    alert('Permissions revoked');
+                },
+                errorHandler);
+    }
+
+    function logout() {
+        openFB.logout(
+                function() {
+                    alert('Logout successful');
+                },
+                errorHandler);
+    }
+
+    function errorHandler(error) {
+        alert(error.message);
+    }
+
+</script>
   <script  src="public/script/app.js">
   </script>
    
