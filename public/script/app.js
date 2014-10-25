@@ -9,6 +9,7 @@
 
     // device APIs are available
     //
+    
     function onDeviceReady() {
         
       
@@ -42,7 +43,7 @@ var MESSAGES = {
             $("#getInfo").on("click",base.getInfo);
             $("#share").on("click",base.share);
             $("#revoke").on("click",base.revoke);
-            $("#logout").on("click",base.logout);
+            //$("#logout").on("click",base.logout);
            
             // Put your initialization code here
         };
