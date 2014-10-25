@@ -37,11 +37,11 @@ var MESSAGES = {
         base.init = function(){
             base.options = $.extend({},$.socialnetz.defaultOptions, options);
             fb.init({appId: NETWORK.FACEBOOK_CLIENT_ID});
-            $(".login").on("click",base.login);
-            $(".getInfo").on("click",base.getInfo);
-            $(".share").on("click",base.share);
-            $(".revoke").on("click",base.revoke);
-            $(".logout").on("click",base.logout);
+            $("#login").on("click",base.login);
+            $("#getInfo").on("click",base.getInfo);
+            $("#share").on("click",base.share);
+            $("#revoke").on("click",base.revoke);
+            $("#logout").on("click",base.logout);
            
             // Put your initialization code here
         };
