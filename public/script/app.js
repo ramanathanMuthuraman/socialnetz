@@ -111,8 +111,8 @@ var MESSAGES = {
     base.logout = function() {
         fb.logout(
                 function() {
-                    // base.popup(MESSAGES.LOGOUT);
-                    alert('Logout successful');
+                    base.popup(MESSAGES.LOGOUT);
+                    //alert('Logout successful');
                 },
                 base.errorHandler);
     }
