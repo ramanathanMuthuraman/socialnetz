@@ -130,7 +130,7 @@ var MESSAGES = {
             (new $.socialnetz(options));
         });
     };
-    
+}    
 })(jQuery);
 
 
