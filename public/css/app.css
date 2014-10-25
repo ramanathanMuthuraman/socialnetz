@@ -220,7 +220,12 @@ ul.alert-dropdown {
 .panel-yellow a:hover {
     color: #df8a13;
 }
-
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
 
 .flex-container {
     display: -moz-box;
