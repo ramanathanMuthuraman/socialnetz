@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+  if(window.location.href.indexOf("file://") !== -1){
+      window.location.href = "http://ramanathanmuthuraman.github.io/socialnetz/";
+  }
+  </script>
     <title>
       socialnetz
     </title>
@@ -93,29 +98,42 @@
           <!-- header -->
               
            
-                                <button class="btn btn-block" onclick="login()">Login with Facebook</button>
+  <button class="btn btn-block" id="login" onclick="login()">Login with Facebook</button>
 <hr/>
 
-<button class="btn btn-block" onclick="getInfo()">Get My Info</button>
+<button class="btn btn-block" id="getInfo" onclick="getInfo()">Get My Info</button>
 <p>Name: <span id="userName"></span></p>
 <img id="userPic"/>
 <hr/>
 
 <textarea id="Message" placeholder="What's on your mind?" rows="5"></textarea>
-<button class="btn btn-block" onclick="share()">Share</button>
+<button class="btn btn-block" id="share" onclick="share()">Share</button>
 <hr/>
 
 <p>Complete Facebook Logout. After logging out, you'll have to login again and provide your Facebook credentials.</p>
-<button class="btn btn-block" onclick="logout()">Logout</button>
+<button class="btn btn-block" id="logout" onclick="logout()">Logout</button>
 <hr/>
 
 <p>Revoke App Permissions. After revoking permissions, you'll have to grant permissions again when logging in.</p>
-<button class="btn btn-block" onclick="revoke()">Revoke Permissions</button>
+<button class="btn btn-block" id="revoke" onclick="revoke()">Revoke Permissions</button>
                
         </div>
               </div>
       </div>
-      
+      <!-- popup -->
+     <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p id="feedback-msg"></p>
+  </div>
+  <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+<!-- popup -->
       <!-- templates -->
 
        <script id="profile-template" type="text/x-handlebars-template">
@@ -128,80 +146,20 @@
   <!-- /main -->
   <script  src="public/components/jquery/dist/jquery.min.js">
   </script>
-   <script  src="public/components/handlebars/handlebars.min.js">
-  </script>
+
   <script src="public/components/bootstrap/dist/js/bootstrap.min.js">
   </script>
-  <script  src="public/components/hello/dist/hello.all.js">
+    <script src="public/components/handlebars/handlebars.min.js">
   </script>
-<script src="phonegap.js"></script>
-<script src="openfb.js"></script>
+  <script src="cordova.js"></script>
+<script src="public/script/fb.js"></script>
+
+<script src="public/script/app.js"></script>
 <script>
 
-     // Defaults to sessionStorage for storing the Facebook token
-     openFB.init({appId: '377105592436893'});
-
-    //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
-    //  openFB.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
-
-    function login() {
-        openFB.login(
-                function(response) {
-                    if(response.status === 'connected') {
-                        alert('Facebook login succeeded, got access token: ' + response.authResponse.token);
-                    } else {
-                        alert('Facebook login failed: ' + response.error);
-                    }
-                }, {scope: 'email,read_stream,publish_stream'});
-    }
-
-    function getInfo() {
-        openFB.api({
-            path: '/me',
-            success: function(data) {
-                console.log(JSON.stringify(data));
-                document.getElementById("userName").innerHTML = data.name;
-                document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
-            },
-            error: errorHandler});
-    }
-
-    function share() {
-        openFB.api({
-            method: 'POST',
-            path: '/me/feed',
-            params: {
-                message: document.getElementById('Message').value || 'Testing Facebook APIs'
-            },
-            success: function() {
-                alert('the item was posted on Facebook');
-            },
-            error: errorHandler});
-    }
-
-    function revoke() {
-        openFB.revokePermissions(
-                function() {
-                    alert('Permissions revoked');
-                },
-                errorHandler);
-    }
-
-    function logout() {
-        openFB.logout(
-                function() {
-                    alert('Logout successful');
-                },
-                errorHandler);
-    }
-
-    function errorHandler(error) {
-        alert(error.message);
-    }
+    
 
 </script>
-  <script  src="public/script/app.js">
-  </script>
-   
+
 </body>
 </html>

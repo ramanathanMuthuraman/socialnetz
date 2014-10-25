@@ -1,29 +1,8 @@
 {
-  "name": "socialnetz",
-  "version": "0.0.0",
-  "description": "connect to social platform",
-  "main": "core.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ramanathanMuthuraman/socialnetz"
-  },
-  "keywords": [
-    "social",
-    "network"
-  ],
-  "author": "ramanathan",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ramanathanMuthuraman/socialnetz/issues"
-  },
-  "homepage": "https://github.com/ramanathanMuthuraman/socialnetz",
-  "devDependencies": {
-    "bower": "^1.3.12"
+	"main":"index.html",
+	"name":"nw",
+	"version":"0.0.0",
+	"window": {
+    		"toolbar": false
   }
 }
