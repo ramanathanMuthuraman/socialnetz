@@ -119,7 +119,9 @@ var MESSAGES = {
         base.popup(error.message);
       //  alert(error.message);
     }
-    
+      // Run initializer
+        base.init();
+  }  
     $.socialnetz.defaultOptions = {
         
         
@@ -130,7 +132,7 @@ var MESSAGES = {
             (new $.socialnetz(options));
         });
     };
-}    
+    
 })(jQuery);
 
 
