@@ -95,7 +95,7 @@ var MESSAGES = {
                 base.popup(MESSAGES.SHARE);
                // alert('the item was posted on Facebook');
             },
-            error: errorHandler});
+            error: base.errorHandler});
     }
 
     base.revoke = function() {
@@ -104,7 +104,7 @@ var MESSAGES = {
                      base.popup(MESSAGES.REVOKE);
                  //   alert('Permissions revoked');
                 },
-                errorHandler);
+                base.errorHandler);
     }
 
     base.logout = function() {
@@ -113,7 +113,7 @@ var MESSAGES = {
                      base.popup(MESSAGES.LOGOUT);
                   //  alert('Logout successful');
                 },
-                errorHandler);
+                base.errorHandler);
     }
 
     base.errorHandler = function(error) {
