@@ -111,7 +111,7 @@
 <hr/>
 
 <p>Complete Facebook Logout. After logging out, you'll have to login again and provide your Facebook credentials.</p>
-<button class="btn btn-block" id="logout" onclick="logout" >Logout</button>
+<button class="btn btn-block" id="logout" onclick="logout()" >Logout</button>
 <hr/>
 
 <p>Revoke App Permissions. After revoking permissions, you'll have to grant permissions again when logging in.</p>
@@ -164,7 +164,7 @@ function logout(){
                     // base.popup(MESSAGES.LOGOUT);
                     alert('Logout successful');
                 },
-                base.errorHandler);
+                function(){alert("error")});
     }
 
 </script>
