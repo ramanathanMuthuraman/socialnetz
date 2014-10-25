@@ -37,7 +37,7 @@ var MESSAGES = {
       
         base.init = function(){
             base.options = $.extend({},$.socialnetz.defaultOptions, options);
-            fb.init({appId: NETWORK.FACEBOOK_CLIENT_ID});
+            openFB.init({appId: NETWORK.FACEBOOK_CLIENT_ID});
             $("#login").on("click",base.login);
             $("#getInfo").on("click",base.getInfo);
             $("#share").on("click",base.share);
@@ -53,7 +53,7 @@ var MESSAGES = {
 
 
     //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
-    //  fb.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
+    //  openFB.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
      base.popup = function (msg){
 
         $("#feedback-msg").html(msg);
@@ -61,7 +61,7 @@ var MESSAGES = {
 
      };
      base.login = function() {
-        fb.login(
+        openFB.login(
                 function(response) {
                     if(response.status === 'connected') {
                         base.popup(MESSAGES.LOGIN_SUCCESS);
@@ -74,7 +74,7 @@ var MESSAGES = {
     }
 
     base.getInfo = function() {
-        fb.api({
+        openFB.api({
             path: '/me',
             success: function(data) {
                 console.log(JSON.stringify(data));
@@ -85,7 +85,7 @@ var MESSAGES = {
     }
 
     base.share = function() {
-        fb.api({
+        openFB.api({
             method: 'POST',
             path: '/me/feed',
             params: {
@@ -99,7 +99,7 @@ var MESSAGES = {
     }
 
     base.revoke = function() {
-        fb.revokePermissions(
+        openFB.revokePermissions(
                 function() {
                      base.popup(MESSAGES.REVOKE);
                  //   alert('Permissions revoked');
@@ -108,7 +108,7 @@ var MESSAGES = {
     }
 
     base.logout = function() {
-        fb.logout(
+        openFB.logout(
                 function() {
                     // base.popup(MESSAGES.LOGOUT);
                     alert('Logout successful');
