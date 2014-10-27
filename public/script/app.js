@@ -43,6 +43,7 @@ var MESSAGES = {
             $("#getInfo").on("click",base.getInfo);
             $("#share").on("click",base.share);
             $("#revoke").on("click",base.revoke);
+            $("#friends").on("click",base.friends);
             $("#logout").on("click",base.logout);
            
             // Put your initialization code here
@@ -108,6 +109,22 @@ var MESSAGES = {
                 base.errorHandler);
     }
 
+    base.friends = function() {
+
+
+        fb.api({path: '/me/friends', success: base.friendsSuccess, error: base.friendsError});
+
+    };
+
+    base.friendsSuccess =  function (data) {
+
+         console.log(JSON.stringify(data));
+    };
+
+    base.friendsError =  function () {
+
+        base.errorHandler(error.message);
+    };
     base.logout = function() {
         fb.logout(
                 function() {
