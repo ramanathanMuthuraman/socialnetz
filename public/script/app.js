@@ -35,12 +35,8 @@ var privilege = {
                 'user_work_history'+
                 'publish_stream,'+
                 'user_friends,'+
+                'manage_friendlists'+
                 'user_about_me,'+
-                'user_actions.books,'+
-                'user_actions.fitness,'+
-                'user_actions.music,'+
-                'user_actions.news,'+
-                'user_actions.video,'+
                 'user_activities,'+
                 'user_games_activity,'+
                 'user_hometown,'+
@@ -111,18 +107,18 @@ var privilege = {
                        // alert('Facebook login failed: ' + response.error);
                     }
                 }, privilege);
-    }
+    };
 
     base.getInfo = function() {
         fb.api({
-            path: '/me',
+            path: '/profile/me',
             success: function(data) {
                 console.log(JSON.stringify(data));
                 document.getElementById("userName").innerHTML = data.name;
                 document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
             },
             error: base.errorHandler});
-    }
+    };
 
     base.share = function() {
         fb.api({
@@ -136,7 +132,7 @@ var privilege = {
                // alert('the item was posted on Facebook');
             },
             error: base.errorHandler});
-    }
+    };
 
     base.revoke = function() {
         fb.revokePermissions(
@@ -145,7 +141,7 @@ var privilege = {
                  //   alert('Permissions revoked');
                 },
                 base.errorHandler);
-    }
+    };
 
     base.friends = function() {
 
@@ -170,7 +166,7 @@ var privilege = {
                     //alert('Logout successful');
                 },
                 base.errorHandler);
-    }
+    };
 
     base.errorHandler = function(error) {
         base.popup(error.message);
@@ -178,7 +174,7 @@ var privilege = {
     }
       // Run initializer
         base.init();
-  }  
+  };  
     $.socialnetz.defaultOptions = {
         
         
