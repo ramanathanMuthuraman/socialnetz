@@ -29,6 +29,19 @@ var MESSAGES = {
         "LOGOUT":"Logout successful"
 };
 
+var privilege = {
+        scope: 'email,'+
+                'read_stream,'+
+                'publish_stream,'+
+                'user_friends,'+
+                'user_about_me,'+
+                'user_birthday,'+
+                'user_education_history,'+
+                'user_groups,'+
+                'user_events,'+
+                'user_likes,'+
+                'manage_notifications'
+    };
 
 (function($){
     $.socialnetz = function(options){
@@ -72,7 +85,7 @@ var MESSAGES = {
                         base.popup(MESSAGES.LOGIN_FAIL);
                        // alert('Facebook login failed: ' + response.error);
                     }
-                }, {scope: 'email,read_stream,publish_stream'});
+                }, privilege);
     }
 
     base.getInfo = function() {
@@ -121,7 +134,7 @@ var MESSAGES = {
          console.log(JSON.stringify(data));
     };
 
-    base.friendsError =  function () {
+    base.friendsError =  function (error) {
 
         base.errorHandler(error.message);
     };
