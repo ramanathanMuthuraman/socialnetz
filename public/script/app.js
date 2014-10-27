@@ -32,14 +32,39 @@ var MESSAGES = {
 var privilege = {
         scope: 'email,'+
                 'read_stream,'+
+                'user_work_history'+
                 'publish_stream,'+
                 'user_friends,'+
                 'user_about_me,'+
+                'user_actions.books,'+
+                'user_actions.fitness,'+
+                'user_actions.music,'+
+                'user_actions.news,'+
+                'user_actions.video,'+
+                'user_activities,'+
+                'user_games_activity,'+
+                'user_hometown,'+
+                'user_interests,'+
+                'user_likes,'+
+                'user_location,'+
+                'user_photos,'+
+                'user_relationships,'+
+                'user_relationship_details,'+
+                'user_videos,'+
+                'user_website,'+
+                'user_work_history,'+
+                'read_friendlists,'+
+                'read_insights,'+
+                'read_mailbox,'+
+                'read_page_mailboxes,'+
+                'manage_pages,'+
+                'publish_actions,'+
                 'user_birthday,'+
                 'user_education_history,'+
                 'user_groups,'+
                 'user_events,'+
-                'user_likes,'+
+                'user_status,'+
+                'user_tagged_places,'+
                 'manage_notifications'
     };
 
