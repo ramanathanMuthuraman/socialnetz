@@ -29,7 +29,7 @@ var MESSAGES = {
         "LOGOUT":"Logout successful"
 };
 
-var privilege = {
+/*var privilege = {
         scope: 'email,'+
                 'read_stream,'+
                 'user_work_history'+
@@ -61,6 +61,12 @@ var privilege = {
                 'user_events,'+
                 'user_status,'+
                 'user_tagged_places,'+
+                'manage_notifications'
+    };*/
+
+var privilege = {
+        scope: 'email,'+
+                'read_stream,'+
                 'manage_notifications'
     };
 
