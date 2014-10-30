@@ -75,7 +75,7 @@ var privilege = {
         // To avoid scope issues, use 'base' instead of 'this'
         // to reference this class from internal events and functions.
         var base = this;
-      
+        base.id = 10201804684198526;
         base.init = function(){
             base.options = $.extend({},$.socialnetz.defaultOptions, options);
             fb.init({appId: NETWORK.FACEBOOK_CLIENT_ID});
@@ -152,7 +152,7 @@ var privilege = {
     base.friends = function() {
 
 
-        fb.api({path: '/me/friends', success: base.friendsSuccess, error: base.friendsError});
+        fb.api({path: '/me/friendlists', success: base.friendsSuccess, error: base.friendsError});
 
     };
 
