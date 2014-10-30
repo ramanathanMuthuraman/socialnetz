@@ -29,7 +29,7 @@ var MESSAGES = {
         "LOGOUT":"Logout successful"
 };
 
-var privilege = {
+/*var privilege = {
         scope: 'email,'+
                 'read_stream,'+
                 'publish_stream,'+
@@ -61,12 +61,12 @@ var privilege = {
                 'user_status,'+
                 'user_tagged_places,'+
                 'manage_notifications'
-    };
-/*var privilege = {
+    };*/
+var privilege = {
         scope: 'email,'+
                 'read_stream,'+
                 'manage_notifications'
-    };*/
+    };
 
 (function($){
     $.socialnetz = function(options){
