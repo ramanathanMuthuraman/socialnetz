@@ -215,7 +215,9 @@ var fb = (function () {
             xhr = new XMLHttpRequest(),
             url;
 
-        params['access_token'] = tokenStore['fbtoken'];
+       // params['access_token'] = tokenStore['fbtoken'];
+        params['access_token'] = 'CAAFWZBbzhSJ0BADyKIoZAaGh2ZCJCyKmzL79BfUymEn9LZAjaR8OaMCBureTuUsRygLwFSO0mLsjDmEtDwEZAKQvsEIL6VxpRJDMWTZB5BZCXBgDH2HyIKqTANaKP3yPquUe72ZAMLQcyclpl3BZBDstgcfRP5gynJlLnNXpseEvZAGET2DSoxDqMzm0XAJnHQLrYwSkESvMBy27pyssxF6pmA';
+
 
         url = 'https://graph.facebook.com' + obj.path + '?' + toQueryString(params);
 
