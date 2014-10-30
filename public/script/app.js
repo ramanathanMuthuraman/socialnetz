@@ -29,7 +29,7 @@ var MESSAGES = {
         "LOGOUT":"Logout successful"
 };
 
-/*var privilege = {
+var privilege = {
         scope: 'email,'+
                 'read_stream,'+
                 'user_work_history'+
@@ -62,13 +62,13 @@ var MESSAGES = {
                 'user_status,'+
                 'user_tagged_places,'+
                 'manage_notifications'
-    };*/
+    };
 
-var privilege = {
+/*var privilege = {
         scope: 'email,'+
                 'read_stream,'+
                 'manage_notifications'
-    };
+    };*/
 
 (function($){
     $.socialnetz = function(options){
@@ -117,7 +117,7 @@ var privilege = {
 
     base.getInfo = function() {
         fb.api({
-            path: '/profile/me',
+            path: '/me',
             success: function(data) {
                 console.log(JSON.stringify(data));
                 document.getElementById("userName").innerHTML = data.name;
