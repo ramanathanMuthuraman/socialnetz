@@ -70,12 +70,9 @@ var privilege = {
                 'user_about_me,'+
                 'user_groups,'+
                 'user_likes,'+
-                'user_relationship_details,'+
                 'user_status,'+
                 'user_birthday,'+
                 'user_friends,'+
-                'user_location,'+
-                'user_relationships,'+
                 'user_work_history,'+
                 'user_education_history'
     };
