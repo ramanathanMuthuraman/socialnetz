@@ -32,7 +32,6 @@ var MESSAGES = {
 var privilege = {
         scope: 'email,'+
                 'read_stream,'+
-                'user_work_history'+
                 'publish_stream,'+
                 'user_friends,'+
                 'manage_friendlists'+
@@ -63,7 +62,6 @@ var privilege = {
                 'user_tagged_places,'+
                 'manage_notifications'
     };
-
 /*var privilege = {
         scope: 'email,'+
                 'read_stream,'+
