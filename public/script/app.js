@@ -65,7 +65,8 @@ var MESSAGES = {
 var privilege = {
         scope: 'email,'+
                 'read_stream,'+
-                'manage_notifications'
+                'manage_notifications,'+
+                'read_friendlists'
     };
 
 (function($){
