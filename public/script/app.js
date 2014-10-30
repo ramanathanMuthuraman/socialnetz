@@ -68,13 +68,18 @@ var privilege = {
                 'manage_notifications,'+
                 'read_friendlists,'+
                 'user_about_me,'+
+                'user_events,'+
                 'user_groups,'+
                 'user_likes,'+
                 'user_status,'+
                 'user_birthday,'+
                 'user_friends,'+
+                'user_location,'+
+                'user_relationships,'+
                 'user_work_history,'+
-                'user_education_history'
+                'user_education_history,'+
+                'user_interests,'+
+                'user_photos'
     };
 
 (function($){
