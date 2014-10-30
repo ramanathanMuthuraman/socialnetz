@@ -66,7 +66,7 @@ var privilege = {
         scope: 'email,'+
                 'read_stream,'+
                 'manage_notifications,'+
-                'read_friendlists'+
+                'read_friendlists,'+
                 'user_about_me,'+
                 'user_groups,'+
                 'user_likes,'+
