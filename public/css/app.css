@@ -222,11 +222,9 @@ ul.alert-dropdown {
 }
 
 .panel {
-border-color: #d2d2d2;
-box-shadow: 0 1px 0 #cfcfcf;
-border-radius: 3px;
+
 background-color: #fff;
-border: 1px solid transparent; */
+border: none; 
 }
 .panel .panel-heading {
 background-color: #ffffff;
