@@ -107,7 +107,7 @@ var privilege = {
                 function(response) {
                     if(response.status === 'connected') {
                         base.popup(MESSAGES.LOGIN_SUCCESS);
-                        $("#user-status").data('status','active').find(".title").html("Logout")
+                        $("#user-status").data('status','active').find(".section-title").html("Logout")
                         $(".login-logout").html("Logout");
                         $(".user-option[data-id='profile']").trigger("click");
                        // alert('Facebook login succeeded, got access token: ' + response.authResponse.token);
