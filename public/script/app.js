@@ -88,6 +88,9 @@ var privilege = {
        if($("#user-status").data("status")==="inactive"){
             base.login();
        }
+       else{
+        base.logout();
+       }
 
      };    
    
@@ -173,6 +176,8 @@ var privilege = {
         fb.logout(
                 function() {
                     base.popup(MESSAGES.LOGOUT);
+                    $("#user-status").data('status','inactive').find(".section-title").html("Login")
+                        $(".login-logout").html("Login");
                     //alert('Logout successful');
                 },
                 base.errorHandler);
