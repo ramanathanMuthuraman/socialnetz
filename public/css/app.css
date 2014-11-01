@@ -236,6 +236,17 @@ color: #262626;
 border-color: #ffffff;
 border-bottom: 1px solid #eee;
 }
+
+.btn-facebook:hover
+{
+color: #fff !important;
+}
+.btn-facebook
+{
+    
+color: #fff;
+background-color: #2d4373;    
+}
 .flex-container {
     display: -moz-box;
     display: -ms-flexbox;

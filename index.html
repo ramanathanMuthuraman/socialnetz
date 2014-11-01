@@ -45,9 +45,17 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav side-nav">
-            <li data-id="profile" class="active user-option">
+           <li  id="user-status" data-status="inactive" data-id="inOut" class="active user-option">
               <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="h6">
+               
+                <span  class="h6 section-title">
+                  Login
+                </span>
+              </a>
+            </li>
+            <li data-id="profile" class="user-option">
+              <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="h6 section-title">
                   Profile
                 </span>
               </a>
@@ -55,7 +63,7 @@
             <li data-id="home" class="user-option">
               <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
               
-                <span class="h6">
+                <span class="h6 section-title">
                   Home
                 </span>
               </a>
@@ -63,7 +71,7 @@
             <li data-id="friends" class="user-option">
               <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
                
-                <span class="h6">
+                <span class="h6 section-title">
                   Friends
                 </span>
               </a>
@@ -71,19 +79,12 @@
             <li data-id="groups" class="user-option">
               <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
                
-                <span class="h6">
+                <span class="h6 section-title">
                   Groups
                 </span>
               </a>
             </li>
-             <li data-id="logout" class="user-option">
-              <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
-               
-                <span class="h6">
-                  Logout
-                </span>
-              </a>
-            </li>
+            
             
             
           </ul>
@@ -94,8 +95,22 @@
         
         <div class="container-fluid">
           
+           <div data-section="inOut" class="section-content">
+                <!--logout container -->
+             <div  class="panel panel-default">
+             <div class="panel-heading">
+                        <h4><span class="login-logout">Login</span></h4>
+                </div>
+
+                <div class="panel-body">
+                  <button class="btn btn-block btn-facebook" id="fb-btn" ><span class="login-logout">Login</span> with Facebook</button>
+              </div>
+              </div>
+               <!--logout container -->
+              </div>
+
           <!-- header -->
-            <div data-section="profile" class="section-content">
+            <div data-section="profile" class="section-content hide">
             <div  class="panel panel-default">
              <div class="panel-heading">
                
@@ -169,19 +184,7 @@
                <!--groups container -->
               </div>
 
-               <div data-section="logout" class="section-content hide">
-                <!--logout container -->
-             <div  class="panel panel-default">
-             <div class="panel-heading">
-                        <h4>logout</h4>
-                </div>
-
-                <div class="panel-body">
-                 logout
-              </div>
-              </div>
-               <!--logout container -->
-              </div>
+              
                
         </div>
               </div>

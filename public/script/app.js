@@ -59,13 +59,14 @@ var privilege = {
         base.init = function(){
             base.options = $.extend({},$.socialnetz.defaultOptions, options);
             fb.init({appId: NETWORK.FACEBOOK_CLIENT_ID});
-            $(".user-option").on("click",base.loadView)
-            $("#login").on("click",base.login);
+            $(".user-option").on("click",base.loadView);
+            $("#fb-btn").on("click",base.status);
             $("#getInfo").on("click",base.getInfo);
             $("#share").on("click",base.share);
             $("#revoke").on("click",base.revoke);
             $("#friends").on("click",base.friends);
             $("#logout").on("click",base.logout);
+         
            
            
             // Put your initialization code here
@@ -82,8 +83,16 @@ var privilege = {
         $('.section-content').addClass("hide")
         $('.section-content[data-section="'+view+'"]').removeClass("hide");
     };
-          
-      // Defaults to sessionStorage for storing the Facebook token
+     base.status = function(){
+
+       if($("#user-status").data("status")==="inactive"){
+            base.login();
+       }
+
+     };    
+   
+
+    // Defaults to sessionStorage for storing the Facebook token
     //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
     //  fb.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
      base.popup = function (msg){
@@ -93,13 +102,18 @@ var privilege = {
 
      };
      base.login = function() {
+         $('#myModal').modal('hide')
         fb.login(
                 function(response) {
                     if(response.status === 'connected') {
                         base.popup(MESSAGES.LOGIN_SUCCESS);
+                        $("#user-status").data('status','active').find(".title").html("Logout")
+                        $(".login-logout").html("Logout");
+                        $(".user-option[data-id='profile']").trigger("click");
                        // alert('Facebook login succeeded, got access token: ' + response.authResponse.token);
                     } else {
                         base.popup(MESSAGES.LOGIN_FAIL);
+                        $("#user-status").addClass("inactive").removeClass("active").html("login");
                        // alert('Facebook login failed: ' + response.error);
                     }
                 }, privilege);
