@@ -45,43 +45,42 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav side-nav">
-            <li class="active network-list">
-              <a href="#github" data-toggle="collapse" data-target=".navbar-collapse">
-                <button class="zocial icon github">
-                  Sign in with Github
-                </button>
+            <li data-id="profile" class="active user-option">
+              <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="h6">
-                  Github
+                  Profile
                 </span>
               </a>
             </li>
-            <li class="network-list">
-              <a href="#linkedin" data-toggle="collapse" data-target=".navbar-collapse">
-                <button class="zocial icon linkedin">
-                  Sign in with linkedin
-                </button>
+            <li data-id="home" class="user-option">
+              <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
+              
                 <span class="h6">
-                  Linkedin
+                  Home
                 </span>
               </a>
             </li>
-            <li class="network-list">
-              <a href="#twitter" data-toggle="collapse" data-target=".navbar-collapse">
-                <button class="zocial icon twitter">
-                  Sign in with twitter
-                </button>
+            <li data-id="friends" class="user-option">
+              <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
+               
                 <span class="h6">
-                  Twitter
+                  Friends
                 </span>
               </a>
             </li>
-            <li class="network-list">
-              <a href="#facebook" data-toggle="collapse" data-target=".navbar-collapse">
-                <button class="zocial icon facebook">
-                  Sign in with facebook
-                </button>
+            <li data-id="groups" class="user-option">
+              <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
+               
                 <span class="h6">
-                  Facebook
+                  Groups
+                </span>
+              </a>
+            </li>
+             <li data-id="logout" class="user-option">
+              <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
+               
+                <span class="h6">
+                  Logout
                 </span>
               </a>
             </li>
@@ -96,9 +95,16 @@
         <div class="container-fluid">
           
           <!-- header -->
-              
-           
-  <button class="btn btn-block" id="login" >Login with Facebook</button>
+            <div data-section="profile" class="section-content">
+            <div  class="panel panel-default">
+             <div class="panel-heading">
+               
+                <h4>Profile</h4>
+                </div>
+
+                <div class="panel-body">
+
+                  <button class="btn btn-block" id="login" >Login with Facebook</button>
 <hr/>
 
 <button class="btn btn-block" id="getInfo" >Get My Info</button>
@@ -118,7 +124,64 @@
 <button class="btn btn-block" id="revoke" >Revoke Permissions</button>
 
 <p>Get friends</p>
-<button class="btn btn-block" id="friends" >Friends</button>
+<button class="btn btn-block" id="friends" >Friends</button> 
+
+                </div>
+                </div>
+                </div>
+            <div data-section="home" class="section-content hide">
+                <!--home container -->
+            <div  class="panel panel-default">
+             <div class="panel-heading">
+                        <h4>home</h4>
+                </div>
+
+                <div class="panel-body">
+                 home
+              </div>
+              </div>
+               <!--home container -->
+              </div>
+               <div data-section="friends" class="section-content hide">
+                <!--friends container -->
+              <div  class="panel panel-default">
+             <div class="panel-heading">
+                        <h4>friends</h4>
+                </div>
+
+                <div class="panel-body">
+                 friends
+              </div>
+              </div>
+               <!--friends container -->
+              </div>
+               <div data-section="groups" class="section-content hide">
+                <!--groups container -->
+             <div  class="panel panel-default">
+             <div class="panel-heading">
+                        <h4>groups</h4>
+                </div>
+
+                <div class="panel-body">
+                 groups
+              </div>
+              </div>
+               <!--groups container -->
+              </div>
+
+               <div data-section="logout" class="section-content hide">
+                <!--logout container -->
+             <div  class="panel panel-default">
+             <div class="panel-heading">
+                        <h4>logout</h4>
+                </div>
+
+                <div class="panel-body">
+                 logout
+              </div>
+              </div>
+               <!--logout container -->
+              </div>
                
         </div>
               </div>

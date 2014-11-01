@@ -29,39 +29,7 @@ var MESSAGES = {
         "LOGOUT":"Logout successful"
 };
 
-/*var privilege = {
-        scope: 'email,'+
-                'read_stream,'+
-                'publish_stream,'+
-                'user_friends,'+
-                'manage_friendlists'+
-                'user_about_me,'+
-                'user_activities,'+
-                'user_games_activity,'+
-                'user_hometown,'+
-                'user_interests,'+
-                'user_likes,'+
-                'user_location,'+
-                'user_photos,'+
-                'user_relationships,'+
-                'user_relationship_details,'+
-                'user_videos,'+
-                'user_website,'+
-                'user_work_history,'+
-                'read_friendlists,'+
-                'read_insights,'+
-                'read_mailbox,'+
-                'read_page_mailboxes,'+
-                'manage_pages,'+
-                'publish_actions,'+
-                'user_birthday,'+
-                'user_education_history,'+
-                'user_groups,'+
-                'user_events,'+
-                'user_status,'+
-                'user_tagged_places,'+
-                'manage_notifications'
-    };*/
+
 var privilege = {
         scope: 'email,'+
                 'read_stream,'+
@@ -91,6 +59,7 @@ var privilege = {
         base.init = function(){
             base.options = $.extend({},$.socialnetz.defaultOptions, options);
             fb.init({appId: NETWORK.FACEBOOK_CLIENT_ID});
+            $(".user-option").on("click",base.loadView)
             $("#login").on("click",base.login);
             $("#getInfo").on("click",base.getInfo);
             $("#share").on("click",base.share);
@@ -98,14 +67,23 @@ var privilege = {
             $("#friends").on("click",base.friends);
             $("#logout").on("click",base.logout);
            
+           
             // Put your initialization code here
         };
         
 
-         // Defaults to sessionStorage for storing the Facebook token
-   
-
-
+       
+   base.loadView = function (e)
+    {
+        var $el = $(e.currentTarget);
+        var view = $el.data('id');   
+        $(".user-option").removeClass("active");
+        $el.addClass("active");
+        $('.section-content').addClass("hide")
+        $('.section-content[data-section="'+view+'"]').removeClass("hide");
+    };
+          
+      // Defaults to sessionStorage for storing the Facebook token
     //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
     //  fb.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
      base.popup = function (msg){
