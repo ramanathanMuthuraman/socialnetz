@@ -149,8 +149,7 @@
                         <h4>home</h4>
                 </div>
 
-                <div class="panel-body">
-                 home
+                 <div class="panel-body home-content">
               </div>
               </div>
                <!--home container -->
@@ -254,6 +253,35 @@
                           
                       
                         </div>
+       </script>
+           
+            <script id="home-template" type="text/x-handlebars-template">
+                        <div class="row">
+                          {{#each data}}
+                            <h4>{{from.name}}</h4>
+                                <h5><p>{{message}}</p><p>{{name}}</p><p>{{description}}</p></h5>
+                                {{#if picture}}
+                            <p>  <img src="{{picture}}" ></p>
+                              {{/if}}
+                        
+                        
+                          <p><img src="public/img/like.png" alt="Likes"/> {{#each likes.data}}
+                           - {{name}}
+                          {{/each}}
+                        </p>
+                          {{#if comments.data}}
+                          <p>Comments : {{#each comments.data}}
+                          <p>{{from.name}} - {{message}}</p>
+                            {{/each}}
+                          </p>
+                          {{/if}}
+                          </div>
+                         
+
+                       
+                            {{/each}}
+
+                          </div>
        </script>
       
   </body>

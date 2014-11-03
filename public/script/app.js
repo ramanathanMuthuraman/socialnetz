@@ -67,6 +67,7 @@ var privilege = {
             $("#friends").on("click",base.friends);
             $("#logout").on("click",base.logout);
              base.profile();
+            base.home();
            
            
             // Put your initialization code here
@@ -98,7 +99,11 @@ var privilege = {
         var template = Handlebars.compile(source);
         $(".profile-content").html(template(response));
      };
-
+ base.home = function(){
+        var source   = $("#home-template").html();
+        var template = Handlebars.compile(source);
+        $(".home-content").html(template(home));
+     };
     // Defaults to sessionStorage for storing the Facebook token
     //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
     //  fb.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});
