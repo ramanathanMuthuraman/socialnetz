@@ -117,12 +117,12 @@
                 <h4>Profile</h4>
                 </div>
 
-                <div class="panel-body">
+                <div class="panel-body profile-content">
 
              
 
 
-<button class="btn btn-block" id="getInfo" >Get My Info</button>
+<!-- <button class="btn btn-block" id="getInfo" >Get My Info</button>
 <p>Name: <span id="userName"></span></p>
 <img id="userPic"/>
 <hr/>
@@ -137,7 +137,7 @@
 <button class="btn btn-block" id="revoke" >Revoke Permissions</button>
 
 <p>Get friends</p>
-<button class="btn btn-block" id="friends" >Friends</button> 
+<button class="btn btn-block" id="friends" >Friends</button>  -->
 
                 </div>
                 </div>
@@ -208,14 +208,57 @@
       <!-- templates -->
 
        <script id="profile-template" type="text/x-handlebars-template">
+                            <div class="row">
+                           <div class="col-md-3 text-center">
+                        <img src="{{src}}" alt="avatar" class="img-responsive img-profile">
+                      </div>
+                      <div class="col-md-9">
+                        <div>
+                          <h2 class="title">{{first_name}} {{last_name}}</h2>
+                          <p></p>
+                        </div>
+                      </div>
+                    
+                      <div class="identity-area">
+                        
+                            <div class="my-caption"><label>Fullname</label></div>
+                            <div> {{name}}</div>
+                         
+                       
+                            <div class="my-caption"><label>Date of birth</label></div>
+                            <div > {{birthday}}</div>
+                         
+                         
+                            <div class="my-caption"><label>Address</label></div>
+                            <div> {{location.name}}</div>
+                        
+                         
+                            <div class="my-caption"><label>Gender</label></div>
+                            <div > {{gender}}</div>
+                        
+                        
+                            <div class="my-caption"><label>Email</label></div>
+                            <div > {{email}}</div>
+                         
 
-                            <img class="img-circle col-xs-12 col-sm-4 col-md-4 col-lg-2" src="{{avatar_url}}">
-                            <span class="col-xs-12 col-sm-8 col-md-8 col-lg-10 flex-item-center text-center h2">{{login}}</span>
+                            <div class="my-caption"><label>Education</label></div>
+                            {{#each education}}
+                            <h4> {{type}}</h4>
+                            <h5> {{school.name}} </h5>                  
+                            {{/each}}
+
+                             <div class="my-caption"><label>Work</label></div>
+                            {{#each work}}
+                            <h4> {{employer.name}}</h4>              
+                            {{/each}}
+                          
+                      
+                        </div>
        </script>
       
   </body>
   <!-- /main -->
-  <script  src="public/components/jquery/dist/jquery.min.js">
+  <script   src="public/components/jquery/dist/jquery.min.js">
   </script>
 
   <script src="public/components/bootstrap/dist/js/bootstrap.min.js">

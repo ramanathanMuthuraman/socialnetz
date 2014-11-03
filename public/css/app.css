@@ -258,3 +258,13 @@ background-color: #2d4373;
     -ms-align-self : center;
     align-self : center;
 }
+
+.my-caption {
+border-bottom: 1px dotted #389B17;
+color: #389B17;
+font-size: 14px;
+font-weight: 400;
+line-height: normal;
+margin-top: 15px;
+text-transform: uppercase;
+}

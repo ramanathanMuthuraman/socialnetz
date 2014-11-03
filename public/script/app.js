@@ -66,7 +66,7 @@ var privilege = {
             $("#revoke").on("click",base.revoke);
             $("#friends").on("click",base.friends);
             $("#logout").on("click",base.logout);
-         
+             base.profile();
            
            
             // Put your initialization code here
@@ -93,7 +93,11 @@ var privilege = {
        }
 
      };    
-   
+   base.profile = function(){
+        var source   = $("#profile-template").html();
+        var template = Handlebars.compile(source);
+        $(".profile-content").html(template(response));
+     };
 
     // Defaults to sessionStorage for storing the Facebook token
     //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
