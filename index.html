@@ -282,7 +282,23 @@
             </div>
           <br>
           <div class="fb-post-height">
-          <p>{{message}}</p><p>{{name}}</p><p>{{description}}</p><p>{{story}}</p>          
+          <p>{{message}}
+          {{#if message}}
+          .
+          {{/if}}
+          {{name}}
+           {{#if name}}
+          .
+          {{/if}}
+          {{description}}
+          {{#if description}}
+          .
+          {{/if}}
+          {{story}}
+          {{#if story}}
+          .
+          {{/if}}
+          </p>          
           </div>
           <p>
           {{#if actions}}
