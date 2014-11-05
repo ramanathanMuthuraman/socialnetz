@@ -177,7 +177,7 @@
                             <h4>Groups</h4>
                         </div>
 
-                        <div class="panel-body">
+                        <div class="panel-body groups-content">
                            
                         </div>
                     </div>
@@ -330,7 +330,29 @@
         {{/each}}
 
       </script>
+ <script id="groups-template" type="text/x-handlebars-template">
+  <div class="list-group">
+  {{#each data}}
+  <div data-groupid="{{id}}" class="fb-group clearfix">
+    <div  class="list-group-item">
+      {{name}}
+      <span class="glyphicon glyphicon-chevron-right pull-right toggle-cue"></span>
+    </div>
+     <div class="groupMembers-content collapse">dfsdf</div>
+     </div>
+    {{/each}}
+</script>
+ <script id="groupMembers-template" type="text/x-handlebars-template">
+        {{#each data}}
+          <div class="list-group-item clearfix  flex-container">  
+          <h4 class="col-md-11 col-ls-11 col-xs-10 flex-item-center">{{name}}</h4>
+       <img src="http://graph.facebook.com/{{id}}/picture" class="img-thumbnail col-ls-1 col-xs-2 col-md-1"
 
+           alt="-" />
+         </div>
+        {{/each}}
+
+      </script>
 
 
 

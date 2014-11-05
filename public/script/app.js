@@ -73,7 +73,26 @@ var privilege = {
             // Put your initialization code here
         };
         
+    base.groupToggle= function (e)
+    {
+        var $el = $(e.currentTarget);
+        var groupid = $el.data('groupid');   
+        $el.find(".groupMembers-content").collapse('toggle');
+        $el.find(".toggle-cue").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
+        base.groupMembers();
+    };
+    base.groupMembers=function(){
+         var source   = $("#groupMembers-template").html();
+        var template = Handlebars.compile(source);
+        $(".groupMembers-content").html(template(groupMembers));
 
+    };
+    base.groups = function(){
+            
+           var source   = $("#groups-template").html();
+        var template = Handlebars.compile(source);
+        $(".groups-content").html(template(groups));
+        };
        
    base.loadView = function (e)
     {
@@ -107,7 +126,10 @@ var privilege = {
         
         base.friendList = function(){
             
-          var sourcsourc  
+             var source   = $("#friendList-template").html();
+        var template = Handlebars.compile(source);
+        $(".friendList-content").html(template(friendList));
+            
         };
     // Defaults to sessionStorage for storing the Facebook token
     //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
