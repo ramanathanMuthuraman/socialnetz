@@ -104,6 +104,11 @@ var privilege = {
         var template = Handlebars.compile(source);
         $(".home-content").html(template(home));
      };
+        
+        base.friendList = function(){
+            
+          var sourcsourc  
+        };
     // Defaults to sessionStorage for storing the Facebook token
     //  Uncomment the line below to store the Facebook token in localStorage instead of sessionStorage
     //  fb.init({appId: 'YOUR_FB_APP_ID', tokenStore: window.localStorage});

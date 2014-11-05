@@ -152,7 +152,7 @@
                         </div>
 
                         <div class="panel-body home-content">
-                            home
+                            
                         </div>
                     </div>
                     <!--home container -->
@@ -161,11 +161,11 @@
                     <!--friends container -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4>friends</h4>
+                            <h4>Friends</h4>
                         </div>
 
-                        <div class="panel-body">
-                            friends
+                        <div class="panel-body friendList-content">
+                            
                         </div>
                     </div>
                     <!--friends container -->
@@ -174,11 +174,11 @@
                     <!--groups container -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4>groups</h4>
+                            <h4>Groups</h4>
                         </div>
 
                         <div class="panel-body">
-                            groups
+                           
                         </div>
                     </div>
                     <!--groups container -->
@@ -195,7 +195,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                    <h3>Modal header</h3>
+                    <h3>Socialnetz</h3>
                 </div>
                 <div class="modal-body">
                     <p id="feedback-msg"></p>
@@ -275,50 +275,64 @@
             {{#each data}}
           
 
- <div class="well row block-green">
-          <div class="col-md-8">
-            <div class="caption">
-              <h1><img src="http://graph.facebook.com/{{from.id}}/picture?type=small" />{{from.name}}</h1>
-            </div>
-          <br>
-          <div class="fb-post-height">
+ <div class="well flex-container row">
+         
+
+            <div class="col-md-2 flex-item-center clearfix">  
+          <h4 >{{from.name}}</h4>
+           <img src="http://graph.facebook.com/{{from.id}}/picture?type=small" class="img-thumbnail"
+
+           alt="-" />
+         </div>
+         <div class="col-md-10">
+          <div class="fb-post">
           <p>{{message}}
-          {{#if message}}
-          .
-          {{/if}}
+         
           {{name}}
-           {{#if name}}
-          .
-          {{/if}}
+          
           {{description}}
-          {{#if description}}
-          .
-          {{/if}}
+         
           {{story}}
-          {{#if story}}
-          .
+          
+          {{#if actions}}
+          <a target="_blank" href="{{#val actions}}{{/val}}">View more</a>
           {{/if}}
           </p>          
           </div>
-          <p>
-          {{#if actions}}
+
        
-          <p class="text-center pull-right">
-           <a target="_blank" href="{{# val actions}}{{/val}}">View more</a>
-           </p>
-           {{/if}}
-       
-          </p>
-          </div>
           {{#if picture}}
-           <img src="{{picture}}" class="img-thumbnail col-md-4 fb-post-img" alt="-" />
+         <p class="col-md-12">
+          <img src="{{picture}}" class="img-thumbnail fb-post-img" alt="-" />
+          
+           </p>
           {{/if}}
+         
+
+         
+         
+       
+      
           </div>
+      
         </div>
         {{/each}}
 
        
     </script>
+
+      <script id="friendList-template" type="text/x-handlebars-template">
+        {{#each data}}
+          <div class="col-md-6 clearfix">  
+          <h4 class="pull-left">{{name}}</h4>
+           <img src="{{picture.data.url}}" class="img-thumbnail pull-right" alt="-" />
+         </div>
+        {{/each}}
+
+      </script>
+
+
+
 
 </body>
 <!-- /main -->
