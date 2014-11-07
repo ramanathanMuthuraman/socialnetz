@@ -170,7 +170,7 @@ var privilege = {
                     if (response.status === 'connected') {
                         base.popup(MESSAGES.LOGIN_SUCCESS);
                         $("#fb-btn").data('status', 'active')
-                        $(".login-logout").html("Logout");
+                        $(".login-logout").html("Logout from");
                         $(".user-option[data-id='profile']").trigger("click");
                         // alert('Facebook login succeeded, got access token: ' + response.authResponse.token);
                     } else {
@@ -208,7 +208,7 @@ var privilege = {
                 function() {
                     base.popup(MESSAGES.LOGOUT);
                     $("#fb-btn").data('status', 'inactive');
-                    $(".login-logout").html("Login");
+                    $(".login-logout").html("Login with");
 
                 },
                 base.errorHandler);
