@@ -65,6 +65,7 @@ var privilege = {
             $("#share").on("click", base.share);
             $("#revoke").on("click", base.revoke);
             $("#friends").on("click", base.friends);
+            $(document).on("click","#fb-group",base.groupToggle);
             $("#logout").on("click", base.logout);
             base.profile();
             base.home();
@@ -104,7 +105,7 @@ var privilege = {
         };
         base.home = function() {
              var opts ={
-                "url":"/me/feed",
+                "url":"/me/home",
                 "template":"#home-template",
                 "el":".home-content"
             };
@@ -135,12 +136,20 @@ var privilege = {
             var groupid = $el.data('groupid');
             $el.find(".groupMembers-content").collapse('toggle');
             $el.find(".toggle-cue").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
-            base.groupMembers();
+            if($el.find(".toggle-cue.glyphicon-chevron-right").length){
+                base.groupMembers(groupid);
+            }
+            
         };
-        base.groupMembers = function() {
-            var source = $("#groupMembers-template").html();
-            var template = Handlebars.compile(source);
-            $(".groupMembers-content").html(template(groupMembers));
+        base.groupMembers = function(groupid) {
+
+             var opts ={
+                "url":groupid+"/members",
+                "template":"#groupMembers-template",
+                "el":".groupMembers-content"
+            };
+            base.api(opts);
+           
 
         };
         
