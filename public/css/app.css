@@ -285,4 +285,6 @@ text-transform: uppercase;
    
    word-wrap: break-word;
 }
-
+.custom-navbar-brand{
+    padding: 7px 15px;
+}
