@@ -22,7 +22,6 @@ var NETWORK = {
 var MESSAGES = {
     "LOGIN_SUCCESS": "Facebook login succeeded",
     "LOGIN_FAIL": "Facebook login failed",
-    "SHARE": "The item was posted on Facebook",
     "REVOKE": "Permissions revoked",
     "LOGOUT": "Logout successful"
 };
@@ -53,7 +52,6 @@ var privilege = {
         // To avoid scope issues, use 'base' instead of 'this'
         // to reference this class from internal events and functions.
         var base = this;
-        base.id = 10201804684198526;
         base.init = function() {
             base.options = $.extend({}, $.socialnetz.defaultOptions, options);
             fb.init({
@@ -61,6 +59,7 @@ var privilege = {
             });
             $(".user-option").on("click", base.loadView);
             $("#fb-btn").on("click", base.status);
+            $("#fb-settings-btn").on("click", base.revoke);
             $("#getInfo").on("click", base.getInfo);
             $("#share").on("click", base.share);
             $("#revoke").on("click", base.revoke);
@@ -87,7 +86,7 @@ var privilege = {
         };
         base.status = function() {
 
-            if ($("#user-status").data("status") === "inactive") {
+            if ($("#fb-btn").data("status") === "inactive") {
                 base.login();
             } else {
                 base.logout();
@@ -170,18 +169,24 @@ var privilege = {
                 function(response) {
                     if (response.status === 'connected') {
                         base.popup(MESSAGES.LOGIN_SUCCESS);
-                        $("#user-status").data('status', 'active').find(".section-title").html("Logout")
+                        $("#fb-btn").data('status', 'active')
                         $(".login-logout").html("Logout");
                         $(".user-option[data-id='profile']").trigger("click");
                         // alert('Facebook login succeeded, got access token: ' + response.authResponse.token);
                     } else {
                         base.popup(MESSAGES.LOGIN_FAIL);
-                        $("#user-status").addClass("inactive").removeClass("active").html("login");
                         // alert('Facebook login failed: ' + response.error);
                     }
                 }, privilege);
         };
 
+         base.revoke = function() {
+            fb.revokePermissions(
+                function() {
+                     base.popup(MESSAGES.REVOKE);
+                },
+                base.errorHandler);
+            };
 
         base.api = function(opts) {
             fb.api({
@@ -202,9 +207,9 @@ var privilege = {
             fb.logout(
                 function() {
                     base.popup(MESSAGES.LOGOUT);
-                    $("#user-status").data('status', 'inactive').find(".section-title").html("Login")
+                    $("#fb-btn").data('status', 'inactive');
                     $(".login-logout").html("Login");
-                    //alert('Logout successful');
+
                 },
                 base.errorHandler);
         };

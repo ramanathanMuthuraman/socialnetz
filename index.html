@@ -48,11 +48,11 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li id="user-status" data-status="inactive" data-id="inOut" class="active user-option">
+                    <li id="user-status"  data-id="settings" class="active user-option">
                         <a href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse">
 
                             <span class="h6 section-title">
-                  Login
+                  Settings
                 </span>
                         </a>
                     </li>
@@ -98,15 +98,16 @@
 
             <div class="container-fluid">
 
-                <div data-section="inOut" class="section-content">
+                <div data-section="settings" class="section-content">
                     <!--logout container -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4><span class="login-logout">Login</span></h4>
+                            <h4>Settings</h4>
                         </div>
 
                         <div class="panel-body">
-                            <button class="btn btn-block btn-facebook" id="fb-btn"><span class="login-logout">Login</span> with Facebook</button>
+                            <button class="btn btn-block btn-facebook" data-status="inactive" id="fb-btn"><span class="login-logout">Login</span> with Facebook</button>
+                            <button class="btn btn-block btn-facebook" id="fb-settings-btn">Revoke permission</button>
                         </div>
                     </div>
                     <!--logout container -->
