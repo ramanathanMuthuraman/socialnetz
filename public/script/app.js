@@ -5,13 +5,7 @@
  * Time: 11:51 AM
  * To change this template use Tools | Templates.
  */
-//document.addEventListener("deviceready", onDeviceReady, false);
-// device APIs are available
-//
-function onDeviceReady() {
 
-
-}
 
 var NETWORK = {
 
@@ -169,13 +163,14 @@ var privilege = {
                 function(response) {
                     if (response.status === 'connected') {
                         base.popup(MESSAGES.LOGIN_SUCCESS);
-                        $("#fb-btn").data('status', 'active')
+                        $("#fb-btn").data('status', 'active');
                         $(".login-logout").html("Logout from");
                         $(".user-option[data-id='profile']").trigger("click");
-                        // alert('Facebook login succeeded, got access token: ' + response.authResponse.token);
+
+                    
                     } else {
                         base.popup(MESSAGES.LOGIN_FAIL);
-                        // alert('Facebook login failed: ' + response.error);
+                     
                     }
                 }, privilege);
         };
@@ -210,6 +205,7 @@ var privilege = {
                     $("#fb-btn").data('status', 'inactive');
                     $(".login-logout").html("Login with");
 
+
                 },
                 base.errorHandler);
         };
@@ -225,8 +221,12 @@ var privilege = {
             {
                 $(opts.el).html(template(data));
             }
+            /*set the profile image*/
+            if(opts.url === "/me")
+            {
+                $("#header-profile-img").src("http://graph.facebook.com/"+data.id+"/picture?type=small");
+            }
             
-            //$(".groupMembers-content").html(template(data));
                
         };
 
