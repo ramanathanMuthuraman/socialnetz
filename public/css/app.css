@@ -288,3 +288,6 @@ text-transform: uppercase;
 .custom-navbar-brand{
     padding: 7px 15px;
 }
+#header-profile-img{
+    height: 50px;
+}
