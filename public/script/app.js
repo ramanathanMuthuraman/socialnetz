@@ -65,7 +65,7 @@ var privilege = {
             $("#share").on("click", base.share);
             $("#revoke").on("click", base.revoke);
             $("#friends").on("click", base.friends);
-            $(document).on("click","#fb-group",base.groupToggle);
+            $(document).on("click",".fb-group",base.groupToggle);
             $("#logout").on("click", base.logout);
             base.profile();
             base.home();
