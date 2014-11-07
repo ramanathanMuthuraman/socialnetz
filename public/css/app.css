@@ -280,3 +280,8 @@ text-transform: uppercase;
     height: 220px;
     margin:0 auto;
 }
+
+.break-word{
+   
+   word-wrap: break-word;
+}
