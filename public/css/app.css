@@ -269,10 +269,14 @@ margin-top: 15px;
 text-transform: uppercase;
 }
 
+.img-profile{
+    display: block;
+    margin: 0 auto;
+}
 
 
 
 .fb-post-img{
     height: 220px;
-    margin:0 a:0 a
+    margin:0 auto;
 }
