@@ -216,7 +216,7 @@ var privilege = {
                 $(opts.el).html(template(data));
             }
             /*set the profile image*/
-            if($("#header-profile-img").attr("src"))
+            if(!$("#header-profile-img").attr("src"))
             {
                 $("#header-profile-img").attr("src","http://graph.facebook.com/"+data.id+"/picture?type=small");
             }
