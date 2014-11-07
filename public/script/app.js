@@ -29,7 +29,7 @@ var privilege = {
         'user_friends,' +
         'user_location,' +
         'user_work_history,' +
-        'user_education_history' +
+        'user_education_history' 
 };
 
 (function($) {
