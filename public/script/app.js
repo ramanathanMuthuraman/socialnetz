@@ -105,7 +105,7 @@ var privilege = {
         };
         base.home = function() {
              var opts ={
-                "url":"/me/home",
+                "url":"/me/feed",
                 "template":"#home-template",
                 "el":".home-content"
             };
