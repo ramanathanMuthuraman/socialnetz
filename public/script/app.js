@@ -222,9 +222,9 @@ var privilege = {
                 $(opts.el).html(template(data));
             }
             /*set the profile image*/
-            if(opts.url === "/me")
+            if($("#header-profile-img").attr("src"))
             {
-                $("#header-profile-img").src("http://graph.facebook.com/"+data.id+"/picture?type=small");
+                $("#header-profile-img").attr("src","http://graph.facebook.com/"+data.id+"/picture?type=small");
             }
             
                
