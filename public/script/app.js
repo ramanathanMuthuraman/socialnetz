@@ -65,7 +65,7 @@ var privilege = {
             $("#share").on("click", base.share);
             $("#revoke").on("click", base.revoke);
             $("#friends").on("click", base.friends);
-            $(document).on("click",".fb-group",base.groupToggle);
+            $(document).on("click","#fb-group",base.groupToggle);
             $("#logout").on("click", base.logout);
             base.profile();
             base.home();
@@ -136,17 +136,18 @@ var privilege = {
             var groupid = $el.data('groupid');
             $el.find(".groupMembers-content").collapse('toggle');
             $el.find(".toggle-cue").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
-            if($el.find(".toggle-cue.glyphicon-chevron-right").length){
-                base.groupMembers(groupid);
+            if($el.find(".toggle-cue.glyphicon-chevron-down").length){
+                base.groupMembers(groupid,$el);
             }
             
         };
-        base.groupMembers = function(groupid) {
+        base.groupMembers = function(groupid,$el) {
 
              var opts ={
-                "url":groupid+"/members",
+                "url":"/"+groupid+"/members",
                 "template":"#groupMembers-template",
-                "el":".groupMembers-content"
+                "el":".groupMembers-content",
+                "context":$el
             };
             base.api(opts);
            
@@ -192,17 +193,7 @@ var privilege = {
             });
         };
 
-        base.getInfo = function() {
-            fb.api({
-                path: '/me',
-                success: function(data) {
-                    console.log(JSON.stringify(data));
-                    document.getElementById("userName").innerHTML = data.name;
-                    document.getElementById("userPic").src = 'http://graph.facebook.com/' + data.id + '/picture?type=small';
-                },
-                error: base.errorHandler
-            });
-        };
+        
 
 
 
@@ -222,7 +213,14 @@ var privilege = {
             //var source = $("#groupMembers-template").html();
             var source = $(opts.template).html();
             var template = Handlebars.compile(source);
-            $(opts.el).html(template(data));
+            if(opts.context){
+                opts.context.find(opts.el).html(template(data));
+            }
+            else
+            {
+                $(opts.el).html(template(data));
+            }
+            
             //$(".groupMembers-content").html(template(data));
                
         };
