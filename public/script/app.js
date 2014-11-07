@@ -53,15 +53,9 @@ var privilege = {
             });
             $(".user-option").on("click", base.loadView);
             $("#fb-btn").on("click", base.status);
-            $("#fb-settings-btn").on("click", base.revoke);
-            $("#getInfo").on("click", base.getInfo);
-            $("#share").on("click", base.share);
-            $("#revoke").on("click", base.revoke);
-            $("#friends").on("click", base.friends);
+            $("#fb-revoke-btn").on("click", base.revoke);
             $(document).on("click",".fb-group",base.groupToggle);
-            $("#logout").on("click", base.logout);
-            base.profile();
-            base.home();
+
 
 
             // Put your initialization code here
@@ -222,11 +216,12 @@ var privilege = {
                 $(opts.el).html(template(data));
             }
             /*set the profile image*/
-            if($("#header-profile-img").attr("src"))
+            if(opts.url === "/me")
             {
-                $("#header-profile-img").attr("src","http://graph.facebook.com/"+data.id+"/picture?type=small");
+                $("#header-profile-img").src("http://graph.facebook.com/"+data.id+"/picture?type=small");
             }
             
+
                
         };
 
