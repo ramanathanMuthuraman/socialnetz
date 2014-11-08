@@ -150,7 +150,8 @@ var privilege = {
                         base.popup(MESSAGES.LOGIN_SUCCESS);
                         $("#fb-btn").data('status', 'active');
                         $(".login-logout").html("Logout from");
-                        $(".user-option[data-id='profile']").trigger("click");
+                        alert("success");
+                        //$(".user-option[data-id='profile']").trigger("click");
 
                     
                     } else {
