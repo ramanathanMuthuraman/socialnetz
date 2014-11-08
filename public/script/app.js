@@ -143,16 +143,14 @@ var privilege = {
 
         };
         base.login = function() {
-          //  $('#myModal').modal('hide')
+            $('#myModal').modal('hide')
             fb.login(
                 function(response) {
-                    alert(response.status);
                     if (response.status === 'connected') {
                         base.popup(MESSAGES.LOGIN_SUCCESS);
                         $("#fb-btn").data('status', 'active');
                         $(".login-logout").html("Logout from");
-                        alert("success");
-                        //$(".user-option[data-id='profile']").trigger("click");
+                        $(".user-option[data-id='profile']").trigger("click");
 
                     
                     } else {
