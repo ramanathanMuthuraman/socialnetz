@@ -189,7 +189,8 @@ var privilege = {
                     base.popup(MESSAGES.LOGOUT);
                     $("#fb-btn").data('status', 'inactive');
                     $(".login-logout").html("Login with");
-
+                    $(".user-info-area").empty();
+                    $("#header-profile-img").attr("src","");
 
                 },
                 base.errorHandler);
