@@ -164,6 +164,7 @@ var privilege = {
             fb.revokePermissions(
                 function() {
                      base.popup(MESSAGES.REVOKE);
+                     that.logout();
                 },
                 base.errorHandler);
             };
