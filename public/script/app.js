@@ -61,7 +61,9 @@ var privilege = {
             $el.addClass("active");
             $('.section-content').addClass("hide")
             $('.section-content[data-section="' + view + '"]').removeClass("hide");
-            base[view]();
+            if(view!=="settings"){
+                base[view]();
+            }
         };
         base.status = function() {
 
