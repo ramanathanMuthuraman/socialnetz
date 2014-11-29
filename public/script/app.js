@@ -61,6 +61,7 @@ var privilege = {
             $el.addClass("active");
             $('.section-content').addClass("hide")
             $('.section-content[data-section="' + view + '"]').removeClass("hide");
+            // Prevent the method call for settings tab
             if(view!=="settings"){
                 base[view]();
             }
