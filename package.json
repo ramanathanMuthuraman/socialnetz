@@ -3,6 +3,8 @@
 	"name":"nw",
 	"version":"0.0.0",
 	"window": {
-    		"toolbar": false
+    		"toolbar": false,
+    		 "width": 1024,
+    		 "height": 700
   }
 }
